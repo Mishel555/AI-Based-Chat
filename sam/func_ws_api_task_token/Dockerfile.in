@@ -1,0 +1,16 @@
+FROM flagship-chatbot-conda-env-py3.9:aws_lambda_base-latest
+
+COPY sam/func_ws_api_task_token/requirements.txt /tmp/func-requirements.txt
+
+RUN /bin/bash -c /opt/miniconda/bin/conda activate /opt/conda-env \
+    && /opt/conda-env/bin/pip install -r /tmp/func-requirements.txt \
+    && /opt/conda-env/bin/pip cache purge
+
+ENV LAMBDA_TASK_ROOT /opt/conda-env/lib/python3.9/site-packages
+
+# Copy function code
+COPY sam/func_ws_api_task_token/app/ ${LAMBDA_TASK_ROOT}/app/
+
+WORKDIR ${LAMBDA_TASK_ROOT}
+ENTRYPOINT [ "/lambda-entrypoint.sh" ]
+CMD [ "app.lambda_handler" ]

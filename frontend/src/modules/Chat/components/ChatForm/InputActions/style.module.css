@@ -1,0 +1,21 @@
+.root {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .root__button {
+    border-radius: 5px;
+    padding: 5px 8px;
+
+    color: #fff;
+    cursor: pointer;
+    background-color: #343541;
+    transition: .3s ease-in-outs;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

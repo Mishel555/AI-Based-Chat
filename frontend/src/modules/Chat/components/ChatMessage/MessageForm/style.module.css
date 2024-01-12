@@ -1,0 +1,55 @@
+.root {
+  width: 100%;
+
+  .root__area {
+    width: 100%;
+
+    font-size: 16px;
+
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: inherit;
+
+    color: #fff;
+  }
+
+  .root__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+
+  .root__cancel, .root__submit {
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    color: #fff;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .root__cancel {
+    border: 1px solid var(--color-danger);
+
+    background-color: var(--color-danger);
+  }
+
+  .root__submit {
+    border: 1px solid var(--color-success);
+
+    background-color: var(--color-success);
+  }
+
+  .root__notification {
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: right;
+    color: #acacbe;
+  }
+}

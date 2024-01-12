@@ -1,0 +1,5 @@
+.validation_sidebar_evidence {
+  & ol {
+    margin: 0 30px;
+  }
+}

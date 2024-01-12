@@ -1,0 +1,25 @@
+-e ./python/chatbot_validator
+-e ./python/chatbot_cloud_util
+-e ./python/vector_store_faissdb
+
+-r ./sam/func_api_login/requirements.txt
+-r ./sam/func_api_login_callback/requirements.txt
+-r ./sam/func_api_logout/requirements.txt
+-r ./sam/func_api_start_chat/requirements.txt
+-r ./sam/func_step_assertions_creator/requirements.txt
+-r ./sam/func_step_evidence_creator/requirements.txt
+-r ./sam/func_step_obfuscator/requirements.txt
+-r ./sam/func_step_statement_creator/requirements.txt
+-r ./sam/func_ws_api/requirements.txt
+-r ./sam/func_ws_api_custom_assertion/requirements.txt
+-r ./sam/func_ws_api_human_input/requirements.txt
+
+-r ./cdk/requirements.txt
+-r ./cdk/requirements-dev.txt
+
+isort
+moto
+pre-commit
+pytest
+pytest-mock
+ruff

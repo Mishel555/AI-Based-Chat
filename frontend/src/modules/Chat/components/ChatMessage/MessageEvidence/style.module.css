@@ -1,0 +1,43 @@
+.root {
+  color: #fff;
+  margin-top: 10px;
+
+  .root__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    .message {
+      margin-left: 10px;
+      & a {
+        text-decoration: underline;
+      }
+      & p {
+        margin: 4px 0;
+      }
+    }
+  }
+
+  .root__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .root__action {
+    width: 24px;
+    height: 24px;
+    padding-top: 4px;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    background: none;
+    color: var(--color-icon);
+
+    &:hover {
+      color: var(--color-icon-secondary);
+    }
+  }
+}

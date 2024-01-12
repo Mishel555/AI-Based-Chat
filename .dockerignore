@@ -1,0 +1,4 @@
+.DS_Store
+**/Dockerfile
+**/Dockerfile.in
+**/*.egg-info

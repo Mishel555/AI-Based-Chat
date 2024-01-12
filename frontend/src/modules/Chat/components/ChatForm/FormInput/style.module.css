@@ -1,0 +1,42 @@
+ .root {
+  width: 80%;
+  max-width: 785px;
+  margin-inline: auto;
+  margin: 0 auto;
+  padding: 12px 16px;
+
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-form-border);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  background-color: var(--color-form-background);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .root__send {
+    color: var(--color-icon);
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 8px;
+
+    border: none;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    background-color: transparent;
+
+    &:not(:disabled) {
+      background-color: var(--color-green);
+    }
+
+    &:not(:disabled):hover {
+      color: var(--color-icon-secondary);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--color-border);
+    }
+  }
+}

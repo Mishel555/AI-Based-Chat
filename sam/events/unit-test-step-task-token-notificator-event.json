@@ -1,0 +1,20 @@
+{
+  "task_token": "task_token_value",
+  "body": {
+    "claims": {
+      "email": "anonymous"
+    },
+    "stageVariables": {
+      "chatbot_requests_bucket": "unit-test-requests-bucket",
+      "chatbot_chat_history_bucket": "unit-test-history-bucket",
+      "jwt_secret_key_name": "jwt-secret-key",
+      "openai_secret_key_name": "openai-secret-key"
+    },
+    "requestContext": {
+      "stage": "unit-test",
+      "connectionId": "E_F4ofEVIAMCKwA=",
+      "apiId": "a3mep33qsb"
+    },
+    "body": "{\"id\":\"691c5615-ce6c-476e-9155-e451e359ce8f\", \"chat_id\":\"8ff3e8e7-6d69-4070-b3f9-c25d7efc36c6\", \"chat_ts\": \"2023-05-16T21:45:10.460757Z\", \"ts\": \"2023-05-16T21:45:10.460757Z\"}"
+  }
+}

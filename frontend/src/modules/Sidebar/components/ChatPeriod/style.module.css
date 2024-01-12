@@ -1,0 +1,12 @@
+.root {
+	.period {
+		height: 36px;
+		padding: 12px 12px 8px;
+
+		font-size: 12px;
+		line-height: 16px;
+
+		color: var(--color-text-secondary);
+		font-weight: 500;
+	}
+}

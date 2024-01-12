@@ -1,0 +1,11 @@
+[tool.ruff]
+ignore-init-module-imports = true
+line-length = 120
+extend-exclude = ["tests", "prompts"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["E402", "F401"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "frontend", "prompts", "venv", "node_modules", "build", "chatbot_validator", "local"]
+skips = ["B101"]

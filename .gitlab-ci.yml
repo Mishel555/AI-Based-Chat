@@ -1,0 +1,198 @@
+stages:
+  - tests
+  - build_backend
+  - development
+  - staging
+  - production
+
+.installation_block: &installation_block
+  - cd cdk
+  - node -v
+  - apk add --no-cache python3 py3-pip
+  - npm install -g aws-cdk  
+  - pip install -r requirements.txt
+
+.deploy_backend_template: &deploy_backend_definition
+  image: node:lts-alpine
+  variables:
+    version: $CI_COMMIT_SHORT_SHA
+  resource_group: $ENVIRONMENT_NAME
+  needs: [ build_backend ]
+  script:  
+    - if [ -n "$ENV" ]; then ENVIRONMENT_NAME=$ENV; fi
+    - !reference [ .installation_block ] 
+    - cdk deploy -c env=$ENVIRONMENT_NAME -c sha_ref=$CI_COMMIT_SHORT_SHA --app "python3 app.py" --require-approval never --outputs-file cdk-outputs-$ENVIRONMENT_NAME.json --all
+  artifacts:
+    paths:
+      - cdk/*.json
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "web"
+      when: manual
+
+.build_frontend_template: &build_frontend_definition
+  image: node:lts-alpine
+  before_script: |
+    apk add --no-cache python3 py3-pip jq
+    pip install python-jose>=3.0.0
+  script: 
+    - if [ -n "$ENV" ]; then ENVIRONMENT_NAME=$ENV; fi
+    - chmod +x ./devops/build_frontend.sh && ./devops/build_frontend.sh
+    - ls -la frontend/dist
+  artifacts:
+    paths:
+      - frontend/dist
+      - bucket_name
+      - frontend/.env*
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "web"
+
+.deploy_frontend_template: &deploy_frontend_definition
+  image: 
+    name: amazon/aws-cli
+    entrypoint: [""]
+  script: 
+    - S3_BUCKET=$(cat bucket_name)
+    - echo $S3_BUCKET
+    - aws s3 cp frontend/dist s3://$S3_BUCKET/ --recursive
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "web"
+
+variables:
+  ENVIRONMENT_NAME:
+    value: "dev-ui"
+    description: "Environment name"
+  AWS_ACCOUNT_NUMBER:
+    value: 774085237690
+    description: "Number of AWS account"
+  AWS_REGION:
+    value: us-east-1
+    description: "AWS region to deploy"
+
+testing:
+  stage: tests
+  image: python:3.9.16-slim
+  before_script: |
+    apt update -y && apt upgrade -y
+    apt install wget -y
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /dev/null
+    sh Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda
+    export PATH="/opt/miniconda/bin:$PATH"
+    conda env create --file base-docker/vamo-conda-env.yml --prefix /opt/conda-env
+  script: |
+    conda init bash
+    source "/opt/miniconda/bin/activate"
+    conda activate /opt/conda-env
+    export PYTHONPATH=$CI_PROJECT_DIR/python/chatbot_cloud_util:$CI_PROJECT_DIR/python/chatbot_validator:$CI_PROJECT_DIR/python/vector_store_faissdb:sam:$CI_PROJECT_DIR/cdk:$PYTHONPATH
+    export POWERTOOLS_METRICS_NAMESPACE=metric_namespace
+    export POWERTOOLS_SERVICE_NAME=metric_name
+    which python
+    /opt/conda-env/bin/pip install -e python/chatbot_validator
+    /opt/conda-env/bin/pip install -e python/chatbot_cloud_util
+    /opt/conda-env/bin/pip install -e python/vector_store_faissdb
+    /opt/conda-env/bin/pip install pytest moto pytest-mock
+    pytest sam/tests
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+
+build_backend:
+  stage: build_backend
+  variables:
+    ECR_REGISTRY: $AWS_ACCOUNT_NUMBER.dkr.ecr.$AWS_REGION.amazonaws.com
+    version: $CI_COMMIT_SHORT_SHA
+  image: 
+    name: amazon/aws-cli
+    entrypoint: [""]
+  services:
+    - docker:dind
+  before_script: |
+    amazon-linux-extras install docker
+    aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
+  script: |
+    chmod +x ./devops/build_backend_and_push.sh 
+    source ./devops/build_backend_and_push.sh && docker_images_deploy_base && docker_images_deploy
+  needs: [testing]
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+
+deploy_dev_backend:
+  <<: *deploy_backend_definition
+  stage: development
+  environment:
+    name: $ENVIRONMENT_NAME
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+      when: manual
+
+build_dev_frontend:
+  <<: *build_frontend_definition
+  stage: development
+  needs:
+    - job: deploy_dev_backend
+      artifacts: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+
+deploy_dev_frontend:
+  <<: *deploy_frontend_definition
+  stage: development
+  needs:
+    - job: deploy_dev_backend
+      artifacts: true
+    - job: build_dev_frontend
+      artifacts: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+
+deploy_staging_backend:
+  <<: *deploy_backend_definition
+  stage: staging
+  variables:
+    ENV: staging
+  environment:
+    name: staging
+  resource_group: staging
+
+build_staging_frontend:
+  <<: *build_frontend_definition
+  stage: staging
+  variables:
+    ENV: staging
+  needs:
+    - job: deploy_staging_backend
+      artifacts: true
+      
+deploy_staging_frontend:
+  <<: *deploy_frontend_definition
+  stage: staging
+  needs:
+    - job: deploy_staging_backend
+      artifacts: true
+    - job: build_staging_frontend
+      artifacts: true
+
+deploy_production_backend:
+  <<: *deploy_backend_definition
+  stage: production
+  variables:
+    ENV: production
+  environment:
+    name: production
+  resource_group: production
+      
+build_production_frontend:
+  <<: *build_frontend_definition
+  stage: production
+  variables:
+    ENV: production
+  needs:
+    - job: deploy_production_backend
+      artifacts: true
+
+deploy_production_frontend:
+  <<: *deploy_frontend_definition
+  stage: production
+  needs:
+    - job: deploy_production_backend
+      artifacts: true
+    - job: build_production_frontend
+      artifacts: true

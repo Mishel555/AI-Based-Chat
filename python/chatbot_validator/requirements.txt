@@ -1,0 +1,8 @@
+faiss-cpu
+langchain
+loguru
+openai
+pandas
+pyalex
+termcolor
+tiktoken

@@ -1,0 +1,56 @@
+.root {
+    .assertion {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        background-color: var(--color-primary);
+        padding: 8px;
+        gap: 8px;
+
+        & button {
+            color: var(--color-icon);
+            border: none;
+            cursor: pointer;
+            line-height: 0;
+            background: transparent;
+            flex-shrink: 0;
+            padding: 4px;
+
+            &:hover {
+                color: var(--color-icon-secondary);
+            }
+        }
+
+        .assertion_buttons {
+            display: flex;
+
+            .check_button {
+
+                .failed_check {
+                    color: var(--color-danger);
+                }
+
+                .success_check {
+                    color: var(--color-success);
+                }
+
+                .in_progress_check {
+                    color: var(--color-warning);
+                }
+            }
+        }
+
+        & span {
+            max-width: 100%;
+            word-wrap: anywhere;
+            flex: 1;
+            display: block;
+        }
+    }
+
+    .evidence_container {
+        font-size: 16px;
+        background: var(--color-secondary);
+        padding: 8px 0;
+    }
+}

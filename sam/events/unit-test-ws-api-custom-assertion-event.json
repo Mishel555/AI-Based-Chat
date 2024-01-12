@@ -1,0 +1,18 @@
+{
+  "stageVariables": {
+    "chatbot_requests_bucket": "unit-test-requests-bucket",
+    "chatbot_chat_history_bucket": "unit-test-history-bucket",
+    "jwt_secret_key_name": "jwt-secret-key",
+    "assertions_workflow_state_machine_arn": "arn:aws:states:us-east-1:123456789012:stateMachine:test-state-machine"
+  },
+  "requestContext": {
+    "routeKey": "custom_assertion",
+    "eventType": "MESSAGE",
+    "messageDirection": "IN",
+    "stage": "unit-test",
+    "requestId": "E_HtcFxPIAMFa8g=",
+    "connectionId": "E_F4ofEVIAMCKwA=",
+    "apiId": "a3mep33qsb"
+  },
+  "body": "{\"action\": \"custom_assertion\", \"session\": \"NjAwOWM3ZTgtNmJhMS00ZmNlLWI1YmYtODJjOTk1OWRhMmYw\", \"body\": \"{\\\"chat_id\\\":\\\"8ff3e8e7-6d69-4070-b3f9-c25d7efc36c6\\\", \\\"chat_ts\\\": \\\"2023-05-16T21:45:10.460757Z\\\", \\\"ts\\\": \\\"2023-05-16T21:45:10.460757Z\\\", \\\"assertion\\\":\\\"custom_assertion_value\\\", \\\"extra\\\": {\\\"extra1\\\": \\\"extra1-value\\\", \\\"extra2\\\": \\\"extra2-value\\\"}}\"}"
+}

@@ -1,0 +1,162 @@
+{
+  "resource": "/auth/login_callback",
+  "path": "/auth/login_callback",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9,ru;q=0.8,az;q=0.7,de;q=0.6",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-ASN": "3320",
+    "CloudFront-Viewer-Country": "DE",
+    "Cookie": "session=NDhhNWFjNmUtNjk0Yi00YzNjLTgzMWQtY2U1YmIxM2YyNDBl",
+    "dnt": "1",
+    "Host": "test.host.test",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "cross-site",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "Via": "2.0 8b5bc0831e6dab612582614c3009efa6.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "znW2U-fL2uyPhA6jPGGeM_3psczIdqKKFBKFjLDt5-V8SApoel5YLg==",
+    "X-Amzn-Trace-Id": "Root=1-64803dda-01845634429bbd9507f0c502",
+    "X-Forwarded-For": "79.207.90.250, 70.132.4.151",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": [
+      "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+    ],
+    "Accept-Encoding": [
+      "gzip, deflate, br"
+    ],
+    "Accept-Language": [
+      "en-US,en;q=0.9,ru;q=0.8,az;q=0.7,de;q=0.6"
+    ],
+    "CloudFront-Forwarded-Proto": [
+      "https"
+    ],
+    "CloudFront-Is-Desktop-Viewer": [
+      "true"
+    ],
+    "CloudFront-Is-Mobile-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-SmartTV-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-Tablet-Viewer": [
+      "false"
+    ],
+    "CloudFront-Viewer-ASN": [
+      "3320"
+    ],
+    "CloudFront-Viewer-Country": [
+      "DE"
+    ],
+    "Cookie": [
+      "session=NDhhNWFjNmUtNjk0Yi00YzNjLTgzMWQtY2U1YmIxM2YyNDBl"
+    ],
+    "dnt": [
+      "1"
+    ],
+    "Host": [
+      "test.host.test"
+    ],
+    "sec-fetch-dest": [
+      "document"
+    ],
+    "sec-fetch-mode": [
+      "navigate"
+    ],
+    "sec-fetch-site": [
+      "cross-site"
+    ],
+    "sec-fetch-user": [
+      "?1"
+    ],
+    "upgrade-insecure-requests": [
+      "1"
+    ],
+    "User-Agent": [
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+    ],
+    "Via": [
+      "2.0 8b5bc0831e6dab612582614c3009efa6.cloudfront.net (CloudFront)"
+    ],
+    "X-Amz-Cf-Id": [
+      "znW2U-fL2uyPhA6jPGGeM_3psczIdqKKFBKFjLDt5-V8SApoel5YLg=="
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-64803dda-01845634429bbd9507f0c502"
+    ],
+    "X-Forwarded-For": [
+      "79.207.90.250, 70.132.4.151"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": {
+    "code": "laT3wq_6cI-cAVEBRmexR4e_VxyJb5aKAa2pKn8Ae9I",
+    "state": "JyeGrKroMfC6Y_ePN_pBmG5Y_BnsXU4NTp69eZpUjW3dgG7-AjUeFl96TQD4Ai0WGAhELeUyuIdMExn7yG05Jg"
+  },
+  "multiValueQueryStringParameters": {
+    "code": [
+      "laT3wq_6cI-cAVEBRmexR4e_VxyJb5aKAa2pKn8Ae9I"
+    ],
+    "state": [
+      "JyeGrKroMfC6Y_ePN_pBmG5Y_BnsXU4NTp69eZpUjW3dgG7-AjUeFl96TQD4Ai0WGAhELeUyuIdMExn7yG05Jg"
+    ]
+  },
+  "pathParameters": null,
+  "stageVariables": {
+    "assertions_workflow_state_machine_arn": "arn:aws:states:us-east-1:429936905021:stateMachine:dev-ilgar-assertions-to-evidence-sm",
+    "jwt_secret_key_name": "test-jwt-secret-key",
+    "openai_secret_key_name": "dev-ilgar-openai-secret-key",
+    "chatbot_requests_bucket": "unit-test-requests-bucket",
+    "chatbot_chat_history_bucket": "unit-test-history-bucket",
+    "human_input_workflow_state_machine_arn": "arn:aws:states:us-east-1:429936905021:stateMachine:dev-ilgar-human-input-to-evidence-sm"
+  },
+  "requestContext": {
+    "resourceId": "8mhwfw",
+    "resourcePath": "/auth/login_callback",
+    "httpMethod": "GET",
+    "extendedRequestId": "GI6aMH1QIAMFesA=",
+    "requestTime": "07/Jun/2023:08:20:42 +0000",
+    "path": "/dev-ilgar/auth/login_callback",
+    "accountId": "429936905021",
+    "protocol": "HTTP/1.1",
+    "stage": "dev-ilgar",
+    "domainPrefix": "nzgnn69ewk",
+    "requestTimeEpoch": 1686126042590,
+    "requestId": "85af4a4a-c203-4bee-b19a-f79c107f9688",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "79.207.90.250",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+      "user": null
+    },
+    "domainName": "test.host.test",
+    "apiId": "nzgnn69ewk"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

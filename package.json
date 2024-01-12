@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "aws-cdk": "^2.47.0",
+    "wscat": "^5.2.0"
+  }
+}

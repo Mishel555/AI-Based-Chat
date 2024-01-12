@@ -1,0 +1,44 @@
+.root {
+	position: relative;
+
+	.root__button {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+		gap: 10px;
+
+		width: 100%;
+		padding: 12px;
+		background: transparent;
+
+		border: none;
+		cursor: pointer;
+		border-radius: 6px;
+
+		transition-duration: 100ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+
+		&:hover {
+			background-color: var(--color-sidebar-active);
+		}
+	}
+
+
+	.user_email {
+    flex: 1;
+		font-size: 13px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		line-height: 20px;
+
+		white-space: nowrap;
+		color: var(--color-text);
+	}
+
+	.dots_icon {
+		flex-shrink: 0;
+		color: var(--color-icon);
+	}
+}

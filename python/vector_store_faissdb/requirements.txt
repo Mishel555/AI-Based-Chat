@@ -1,0 +1,7 @@
+chatbot_cloud_util
+
+faiss-cpu
+fastapi
+langchain
+loguru
+uvicorn[standard]

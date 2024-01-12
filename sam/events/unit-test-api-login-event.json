@@ -1,0 +1,112 @@
+{
+  "resource": "/auth/login",
+  "path": "/auth/login",
+  "httpMethod": "GET",
+  "headers": {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "accept-encoding": "gzip, deflate, br",
+    "accept-language": "en-US,en;q=0.9",
+    "Host": "localhost:3000",
+    "sec-ch-ua-mobile": "?0",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "none",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "X-Amzn-Trace-Id": "Root=1-647e0a2f-6190b09d6cf51aaf318aeb3d",
+    "X-Forwarded-For": "141.136.70.85",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "accept": [
+      "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+    ],
+    "accept-encoding": [
+      "gzip, deflate, br"
+    ],
+    "accept-language": [
+      "en-US,en;q=0.9"
+    ],
+    "Host": [
+      "dev-vova-chat.fsp-pi-dev.com"
+    ],
+    "sec-ch-ua-mobile": [
+      "?0"
+    ],
+    "sec-fetch-dest": [
+      "document"
+    ],
+    "sec-fetch-mode": [
+      "navigate"
+    ],
+    "sec-fetch-site": [
+      "none"
+    ],
+    "sec-fetch-user": [
+      "?1"
+    ],
+    "upgrade-insecure-requests": [
+      "1"
+    ],
+    "User-Agent": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-647e0a2f-6190b09d6cf51aaf318aeb3d"
+    ],
+    "X-Forwarded-For": [
+      "141.136.70.85"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": {
+    "assertions_workflow_state_machine_arn": "arn:aws:states:us-east-1:429936905021:stateMachine:dev-vova-assertions-to-evidence-sm",
+    "jwt_secret_key_name": "dev-vova-jwt-key-secret",
+    "openai_secret_key_name": "dev-vova-openai-key-secret",
+    "chatbot_requests_bucket": "unit-test-requests-bucket",
+    "chatbot_chat_history_bucket": "unit-test-history-bucket",
+    "human_input_workflow_state_machine_arn": "arn:aws:states:us-east-1:429936905021:stateMachine:dev-vova-human-input-to-evidence-sm"
+  },
+  "requestContext": {
+    "resourceId": "oz7clg",
+    "resourcePath": "/auth/login",
+    "httpMethod": "GET",
+    "extendedRequestId": "GDaHgGg_IAMF9TA=",
+    "requestTime": "05/Jun/2023:16:15:43 +0000",
+    "path": "/auth/login",
+    "accountId": "429936905021",
+    "protocol": "HTTP/1.1",
+    "stage": "dev-vova",
+    "domainPrefix": "dev-vova-chat",
+    "requestTimeEpoch": 1685981743738,
+    "requestId": "d0a86c3a-edf3-4943-9365-9418b3b70097",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "141.136.70.85",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+      "user": null
+    },
+    "domainName": "test://test_host",
+    "apiId": "qgrfdwv3r0"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

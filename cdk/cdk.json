@@ -1,0 +1,135 @@
+{
+  "app": "python3 app.py",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      "source.bat",
+      "**/__init__.py",
+      "python/__pycache__",
+      "tests"
+    ]
+  },
+  "context": {
+    "dev-ilgar": {
+      "environment": "dev-ilgar",
+      "unique_env_key": "fjz2mQu4CoysaSHAWEqKNMJTC9HLDqze1",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-ilgar-jwt-secret-key-RoBtJF",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-ilgar-openai-secret-key-Q30Hoo",
+      "auth0_client_id": "0oa5qjpandaWNrdUn697",
+      "auth0_url": "https://trial-4847591.okta.com",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/baefbff4-9780-4a23-9d05-e80ba46b1d99",
+      "hosted_zone_id": "Z04618993DYVHE6O8GFGC",
+      "zone_name": "fsp-pi-dev.com",
+      "success_login_redirect_path": "app/index.html",
+      "log_apigw_event": "yes"
+    },
+    "dev-ui": {
+      "environment": "dev-ui",
+      "unique_env_key": "FCgtgiuoZ7wiX7UTTbStgZYTv2sTjaVE1",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-ui-jwt-key-secret-L4Aopj",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-ui-openai-key-secret-8x2MTE",
+      "auth0_client_id": "0oa9k81g15SsHi8ty5d7",
+      "auth0_url": "https://dev-19206727.okta.com",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/baefbff4-9780-4a23-9d05-e80ba46b1d99",
+      "hosted_zone_id": "Z04618993DYVHE6O8GFGC",
+      "zone_name": "fsp-pi-dev.com",
+      "success_login_redirect_path": "app/index.html",
+      "log_apigw_event": "yes"
+    },
+    "dev-vova": {
+      "environment": "dev-vova",
+      "unique_env_key": "fjz2mQu4CoysaSHAWEqqweqKNMJTC9HLDqze1",
+      "auth0_client_id": "0oa9k81g15SsHi8ty5d7",
+      "auth0_url": "https://dev-19206727.okta.com",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-vova-jwt-key-secret-faVf7g",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-vova-openai-key-secret-Y2iT2M",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/baefbff4-9780-4a23-9d05-e80ba46b1d99",
+      "hosted_zone_id": "Z04618993DYVHE6O8GFGC",
+      "zone_name": "fsp-pi-dev.com",
+      "success_login_redirect_path": "app/index.html",
+      "log_apigw_event": "value"
+    },
+    "local": {
+      "environment": "local",
+      "unique_env_key": "fjz2mQu4CoysaSHAWEqqweqKNMJTC9HLDqze1",
+      "auth0_client_id": "0oa9k81g15SsHi8ty5d7",
+      "auth0_url": "https://dev-19206727.okta.com",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-vova-jwt-key-secret-faVf7g",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-vova-openai-key-secret-Y2iT2M",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/baefbff4-9780-4a23-9d05-e80ba46b1d99",
+      "hosted_zone_id": "Z04618993DYVHE6O8GFGC",
+      "zone_name": "fsp-pi-dev.com",
+      "redis_host": "redis",
+      "redis_port": "6379",
+      "api_base_url": "http://localhost:5000",
+      "auth0_login_callback": "login_callback"
+    },
+    "dev-ilya": {
+      "environment": "dev-ilya",
+      "unique_env_key": "fjz2mQu4CoysaSHAWEqKNMJTC9HLDqz32",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-vova-jwt-key-secret-faVf7g",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:dev-vova-openai-key-secret-Y2iT2M",
+      "auth0_client_id": "0oa9k81g15SsHi8ty5d7",
+      "auth0_url": "https://dev-19206727.okta.com",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/baefbff4-9780-4a23-9d05-e80ba46b1d99",
+      "hosted_zone_id": "Z04618993DYVHE6O8GFGC",
+      "zone_name": "fsp-pi-dev.com",
+      "success_login_redirect_path": "app/index.html",
+      "log_apigw_event": "yes"
+    },
+    "staging": {
+      "environment": "staging",
+      "unique_env_key": "7jRcCSfNk3yaNSdkRfspe5WqArbFWq291",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:staging-jwt-secret-key-9lYyLJ",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:staging-openai-secret-key-cRiNNP",
+      "auth0_client_id": "0oassjlbxzyl9ikpt357",
+      "auth0_url": "https://fsp.okta.com",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/eabf37c2-c54a-490b-83f1-d6550af6bbd8",
+      "hosted_zone_id": "Z04591692AYSI1Z8T6F11",
+      "zone_name": "chat.fsp-pi.com",
+      "success_login_redirect_path": "app/index.html",
+      "api_redirect_extra_path": "",
+      "log_apigw_event": "yes"
+    },
+    "production": {
+      "environment": "production",
+      "unique_env_key": "7jRcCSfNk3yaNSdkRfspe5WqArbFWq192",
+      "jwt_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:production-jwt-secret-key-k9OCq1",
+      "openai_secret_key_full_arn": "arn:aws:secretsmanager:us-east-1:774085237690:secret:production-openai-secret-key-qzIkMi",
+      "auth0_client_id": "",
+      "auth0_url": "https://fsp.okta.com",
+      "certificate_arn": "arn:aws:acm:us-east-1:774085237690:certificate/eabf37c2-c54a-490b-83f1-d6550af6bbd8",
+      "hosted_zone_id": "Z04591692AYSI1Z8T6F11",
+      "zone_name": "chat.fsp-pi.com",
+      "success_login_redirect_path": "app/index.html",
+      "api_redirect_extra_path": "",
+      "log_apigw_event": "yes"
+    },
+    "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
+    "@aws-cdk/core:stackRelativeExports": true,
+    "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
+    "@aws-cdk/aws-lambda:recognizeVersionProps": true,
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": true,
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+    "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": true,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": true,
+    "@aws-cdk/aws-apigateway:disableCloudWatchRole": true,
+    "@aws-cdk/core:enablePartitionLiterals": true,
+    "@aws-cdk/core:target-partitions": [
+      "aws",
+      "aws-cn"
+    ]
+  }
+}

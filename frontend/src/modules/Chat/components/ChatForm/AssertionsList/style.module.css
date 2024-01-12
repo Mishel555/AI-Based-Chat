@@ -1,0 +1,45 @@
+.root {
+  max-width: 500px;
+  max-height: 200px;
+  border-radius: 5px;
+  padding: 10px 5px 10px 0;
+  list-style: none;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #acacbe;
+  }
+
+  .root__button {
+    width: 100%;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 2px solid #343541;
+
+    color: #fff;
+    cursor: pointer;
+    background-color: #343541;
+    transition: .3s ease-in-outs;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .focused {
+    outline: 1px solid white;
+  }
+}

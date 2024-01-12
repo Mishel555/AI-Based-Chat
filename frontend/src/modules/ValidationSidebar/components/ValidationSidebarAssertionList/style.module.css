@@ -1,0 +1,22 @@
+.root {
+	padding: 8px;
+	overflow: auto;
+	list-style: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 3px;
+		background-color: #acacbe;
+	}
+}

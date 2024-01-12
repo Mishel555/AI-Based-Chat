@@ -1,0 +1,18 @@
+.root {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 120px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #acacbe;
+  }
+}

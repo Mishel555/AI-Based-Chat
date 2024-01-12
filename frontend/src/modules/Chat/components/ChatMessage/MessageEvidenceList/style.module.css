@@ -1,0 +1,22 @@
+.messageEvidenceList {
+  margin-top: 10px;
+  margin-left: 50px;
+  line-height: 20px;
+}
+
+.errorEvidenceMessage {
+  color: var(--color-error);
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 50px;
+  line-height: 20px;
+}
+
+.summary {
+  margin-top: 10px;
+  & p {
+   margin-left: 40px;
+   margin-top: 10px;
+  }
+}
+

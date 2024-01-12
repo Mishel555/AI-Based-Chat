@@ -1,0 +1,11 @@
+.root {
+  width: 100%;
+  padding: 25px 12px;
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-image: linear-gradient(180deg, rgba(32, 32, 35, 0), #353740 58.85%);
+}

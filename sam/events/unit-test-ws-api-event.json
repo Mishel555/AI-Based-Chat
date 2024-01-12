@@ -1,0 +1,19 @@
+{
+  "queryStringParameters": {
+    "session": "NjAwOWM3ZTgtNmJhMS00ZmNlLWI1YmYtODJjOTk1OWRhMmYw"
+  },
+  "stageVariables": {
+    "chatbot_requests_bucket": "unit-test-requests-bucket",
+    "chatbot_chat_history_bucket": "unit-test-history-bucket",
+    "jwt_secret_key_name": "jwt-secret-key"
+  },
+  "requestContext": {
+    "routeKey": "$connect",
+    "eventType": "CONNECT",
+    "messageDirection": "IN",
+    "stage": "unit-test",
+    "requestId": "E_F4oG0_IAMF6xQ=",
+    "connectionId": "E_F4ofEVIAMCKwA=",
+    "apiId": "a3mep33qsb"
+  }
+}

@@ -1,0 +1,67 @@
+:root {
+	--color-primary: rgb(52, 53, 65);
+	--color-secondary: rgb(68, 70, 84);
+	--color-success: rgb(92, 146, 32); /* rgb(91, 134, 50) */
+	--color-warning: rgb(209, 168, 55) ; /* rgb(173, 138, 40) */
+  --color-danger: rgb(185, 66, 43);
+	--color-error: rgb(239, 65, 70);
+	--color-error-background: rgba(239, 65, 70, .1);
+
+	--color-main-background: #343541;
+
+	/* text */
+	--color-text: rgb(236, 236, 241);
+	--color-text-secondary: rgb(142, 142, 160);
+
+	/* border*/
+	--color-border: rgba(255,255,255, .2);
+
+	/* user */
+	--color-user-bg: var(--color-primary);
+	--color-user-text: var(--color-text);
+
+	/* ai */
+	--color-ai-bg: var(--color-secondary);
+	--color-ai-text: rgb(209, 213, 219);
+
+  /* evidence */
+  --color-evidence-bg: rgb(102, 103, 115);
+
+  /* form */
+	--color-chat-form: rgb(64,65,79);
+	--color-form-border: rgba(32,33,35,.5);
+	--color-form-background: #40414f;
+
+	/* icon */
+	--color-icon: rgb(197, 197, 210);
+	--color-icon-secondary: rgb(255, 255, 255);
+
+	/* sidebar */
+	--color-sidebar-bg: rgb(32, 33, 35);
+	--color-sidebar-hover: rgb(42, 43, 50);
+	--color-sidebar-active: var(--color-primary);
+
+	/* context menu */
+	--color-context-bg: rgb(0, 0, 0);
+
+	/* Theme colors */
+	--color-green: rgb(25, 195, 125);
+}
+
+.root {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	align-items: stretch;
+	overflow: hidden;
+
+	.root__wrapper {
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+
+		display: flex;
+		align-items: stretch;
+	}
+}

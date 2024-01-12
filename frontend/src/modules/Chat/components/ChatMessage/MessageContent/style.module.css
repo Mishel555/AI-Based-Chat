@@ -1,0 +1,48 @@
+.root {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+
+  .root__message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+    & ul, ol {
+      line-height: 24px;
+      padding-left: 20px;
+    }
+
+    & pre:not(:has(:empty)) {
+      width: 100%;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+      background-color: var(--color-sidebar-bg);
+    }
+  }
+}
+
+.message_loading.last_message {
+  &:empty:last-child, p:last-child, ol:last-child > li:last-child {
+    &:after {
+      content: "▋";
+      animation: blink 1s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

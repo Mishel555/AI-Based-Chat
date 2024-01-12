@@ -1,0 +1,21 @@
+.root button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-icon);
+
+  &:hover {
+    color: var(--color-icon-secondary);
+  }
+
+  .root__button {
+    outline: none;
+    cursor: pointer;
+  }
+}

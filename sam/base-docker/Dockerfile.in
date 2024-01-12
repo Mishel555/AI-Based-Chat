@@ -1,0 +1,24 @@
+FROM flagship-chatbot-conda-env-py3.9:base-latest as miniconda
+
+FROM public.ecr.aws/lambda/python:3.9
+
+ENV CONDA_ENV /opt/conda-env
+
+COPY --from=miniconda /opt/miniconda /opt/miniconda
+COPY --from=miniconda /opt/conda-env /opt/conda-env
+COPY --from=miniconda /chatbot_validator /chatbot_validator
+COPY --from=miniconda /chatbot_cloud_util /chatbot_cloud_util
+
+RUN /opt/miniconda/bin/conda run -p $CONDA_ENV pip install --no-cache-dir awslambdaric \
+    && /opt/conda-env/bin/pip cache purge \
+    && /opt/miniconda/bin/conda run -p $CONDA_ENV conda clean --yes --all
+
+RUN mkdir -p /opt/python/lib/python3.9/site-packages \
+    && ln -s $CONDA_ENV/lib/python3.9/site-packages /opt/python/lib/python3.9/site-packages
+
+# we have to replace python here because this path is hardcoded in AWS lambda shell wrappers
+RUN mv /var/lang/bin/python3.9 /var/lang/bin/python3.9-clean && ln -sf /opt/conda-env/bin/python3.9 /var/lang/bin/python3.9
+RUN mv /var/lang/bin/python3.9-config /var/lang/bin/python3.9-config-clean && ln -sf /opt/conda-env/bin/python3.9-config /var/lang/bin/python3.9-config
+
+ENTRYPOINT ["/opt/miniconda/bin/conda"]
+CMD ["info"]

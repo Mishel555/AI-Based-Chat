@@ -1,0 +1,10 @@
+chatbot_validator
+
+aws-xray-sdk
+aws_lambda_powertools
+boto3
+fastjsonschema
+python-dateutil
+python-jose[cryptography]
+redis
+requests

@@ -1,0 +1,17 @@
+{
+  "stageVariables": {
+    "chatbot_requests_bucket": "unit-test-requests-bucket",
+    "chatbot_chat_history_bucket": "unit-test-history-bucket",
+    "jwt_secret_key_name": "jwt-secret-key"
+  },
+  "requestContext": {
+    "routeKey": "task_token",
+    "eventType": "MESSAGE",
+    "messageDirection": "IN",
+    "stage": "unit-test",
+    "requestId": "E_HtcFxPIAMFa8g=",
+    "connectionId": "E_F4ofEVIAMCKwA=",
+    "apiId": "a3mep33qsb"
+  },
+  "body": "{\"action\": \"\", \"session\": \"NjAwOWM3ZTgtNmJhMS00ZmNlLWI1YmYtODJjOTk1OWRhMmYw\", \"body\": \"{\\\"id\\\":\\\"a4775301-4e0b-4c40-a44e-088234652e28\\\", \\\"chat_id\\\":\\\"90848e54-2f04-4153-ad97-57b521027f2c\\\", \\\"chat_ts\\\": \\\"2023-06-14T16:24:39.887000+00:00\\\", \\\"ts\\\": \\\"2023-05-17T13:51:00.703323Z\\\", \\\"task_token\\\":\\\"AQCQAAAAKgAAAAMAAAAAAAAAAbkvGYweyI2SRSzpNpcnIrdz1lpsAhL/IFYQQ9GWkZNluYkx1FQSH9h1KrldFk3axyJs+0f8w/d+RPzpzXiUqIuKAJDkp46vX+hwjAQPiMs4iPJQmoZshdTpHsurw0L+h3bBWIzDiHxTqZ2c9/6PLRqJ8uKD4VJeb7xx06dzNi9HZxMHq0UskGo60U5owyCBzoRnJqrkw+6UeeoIzgCYJCc6oELxkLzf06grb+N7cYyfrrd209Hp1VfpFEfoSLyR9b71zOkkCAMGDs4/nHfbOOIMO+NTfEdU88dnK6yXggAZ+VUtjy36eMnOP52bHmQGcqYHuXEDTVjrVeYnT/K4IR3hvS0/RmwaWofTcuHlXCuIavKQKz6KRSvPN487vvE4QhxQ/Kocd0KaqhJKwrPxrcNwKWVq6LLO2Stl0zrv9VcePyga1Ta/Kx6C3HHoHyIhUVbyVqWVWLMiQdEaty1qWs4IhvgcHaUE2yD5nsR0VGHBx4dBv1C9mllq4evNtE1PUopqSLMFV8xCtZWUPhupctl11Qh2GPmaS5mekvZLt3Z8V/WLKuN3bSQnYWRSmSme2zHOGxD1yCU2KLOhRe86/3m79C+6K9Mdb/ZmtHZ31VKGfUixo7L74VhmWak8Pl5ARyPDdVZ7LePN51se\\\"}\"}"
+}

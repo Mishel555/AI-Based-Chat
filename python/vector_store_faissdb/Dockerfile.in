@@ -1,0 +1,22 @@
+FROM flagship-chatbot-conda-env-py3.9:base-latest as miniconda
+
+FROM python:3.9
+
+ENV CONDA_ENV /opt/conda-env
+
+COPY --from=miniconda /opt/miniconda /opt/miniconda
+COPY --from=miniconda /opt/conda-env /opt/conda-env
+COPY --from=miniconda /chatbot_validator /chatbot_validator
+COPY --from=miniconda /chatbot_cloud_util /chatbot_cloud_util
+
+COPY python/vector_store_faissdb /vector_store_faissdb
+
+RUN /opt/miniconda/bin/conda run -p $CONDA_ENV pip install --no-cache-dir -e /vector_store_faissdb \
+    && /opt/conda-env/bin/pip cache purge
+
+WORKDIR /vector_store_faissdb
+
+HEALTHCHECK --interval=15s --timeout=3s --start-period=10s CMD /usr/bin/curl --fail http://localhost/health || exit 1
+
+ENTRYPOINT ["/opt/miniconda/bin/conda"]
+CMD ["run", "--no-capture-output", "-p", "/opt/conda-env", "uvicorn", "vector_store_faissdb:app", "--host", "0.0.0.0", "--port", "80", "--workers", "16", "--timeout-keep-alive", "600"]

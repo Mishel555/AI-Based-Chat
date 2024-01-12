@@ -1,0 +1,24 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #343541;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input, textarea {
+  font-family: "Manrope", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
